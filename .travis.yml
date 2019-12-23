@@ -1,3 +1,4 @@
+language: node_js
 after_success:
  - set -e
  - sudo apt-get install -y lftp
