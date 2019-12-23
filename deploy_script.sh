@@ -1,3 +1,3 @@
 cd /home/jeetarts/test
 pwd
-git pull
+git clone https://github.com/adityacodes/paswnx.git
