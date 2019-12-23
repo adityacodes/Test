@@ -7,4 +7,4 @@ before_deploy:
 script:
  - echo "Deploy!!"
 after_success:
- - ssh jeetarts@tix.jeetvisualarts.com -o StrictHostKeyChecking=no pwd
+ - ssh -i ./cpanel_deploy jeetarts@tix.jeetvisualarts.com -o StrictHostKeyChecking=no pwd
