@@ -5,4 +5,4 @@ after_success:
  - openssl enc -aes-256-cbc -d -salt -in ./cpanel_deploy.enc -out ./cpanel_deploy -pass pass:Aditya@9658
  - eval "$(ssh-agent -s)"
  - chmod 600 ./cpanel_deploy
- - ssh jeetarts@tix.jeetvisualarts.com -o StrictHostKeyChecking=no pwd
+ - ssh -i ./cpanel_deploy jeetarts@tix.jeetvisualarts.com -o StrictHostKeyChecking=no pwd
