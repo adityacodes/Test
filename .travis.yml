@@ -1,7 +1,10 @@
 language: node_js
+before_deploy:
+ - openssl enc -aes-256-cbc -d -salt -in ./cpanel_deploy.enc -out ./cpanel_deploy.ppk -pass pass:Aditya@9658
+ - eval "$(ssh-agent -s)"
+ - chmod 600 /tmp/deploy_rsa
+ - ssh-add /tmp/deploy_rsa
 script:
  - echo "Deploy!!"
 after_success:
- - set -e
- - sudo apt-get install -y lftp
- - lftp -c "set ftps:initial-prot ''; set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate false; open ftp://jeetarts:Jeet@2512@eclipsetix.jeetvisualarts.com:21; mirror -eRv . /home/jeetarts; quit;" 
+ - ssh -i ./cpanel_deploy jeetarts@tix.jeetvisualarts.com pwd
