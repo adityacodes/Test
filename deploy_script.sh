@@ -1,2 +1,3 @@
+cd /home/jeetarts/test
 pwd
-echo 'Deploy success'
+git pull
