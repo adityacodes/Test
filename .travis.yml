@@ -9,4 +9,7 @@ before_install:
 script:
  - echo "Deploy!!"
 after_success:
- - ssh -i ./cpanel_deploy jeetarts@23.229.219.2 pwd
+ - ssh -i ./cpanel_deploy jeetarts@23.229.219.2 
+ - cd /home/jeetarts/tix.jeetvisualarts.com
+ - pwd
+ - git --version
