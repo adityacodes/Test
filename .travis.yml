@@ -1,10 +1,10 @@
 language: node_js
 before_deploy:
- - openssl enc -aes-256-cbc -d -salt -in ./cpanel_deploy.enc -out ./cpanel_deploy.ppk -pass pass:Aditya@9658
+ - openssl enc -aes-256-cbc -d -salt -in ./cpanel_deploy.enc -out ./cpanel_deploy -pass pass:Aditya@9658
  - eval "$(ssh-agent -s)"
- - chmod 600 /tmp/deploy_rsa
- - ssh-add /tmp/deploy_rsa
+ - chmod 600 /tmp/cpanel_deploy
+ - ssh-add /tmp/cpanel_deploy
 script:
  - echo "Deploy!!"
 after_success:
- - ssh -i ./cpanel_deploy jeetarts@tix.jeetvisualarts.com pwd
+ - ssh -i jeetarts@tix.jeetvisualarts.com pwd
