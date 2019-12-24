@@ -2,7 +2,7 @@ language: node_js
 env:
   - SERVER_IP_ADDRESS=23.229.219.2
 before_install:
- - openssl enc -d -aes-256-cbc -salt -in cpanel_deploy.enc -out cpanel_deploy -k Aditya@9658
+ - openssl enc -d -aes-256-cbc -salt -in cpanel_deploy.enc -out cpanel_deploy -k $SERVER_PASS
  - eval "$(ssh-agent -s)"
  - chmod 600 ./cpanel_deploy
  - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config

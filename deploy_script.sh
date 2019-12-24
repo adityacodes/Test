@@ -1,2 +1,2 @@
-cd /home/jeetarts/test
+rm -rf /home/jeetarts/test
 pwd
